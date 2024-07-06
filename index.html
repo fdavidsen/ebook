@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<title>Competitive Programming Basic</title>
+	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+	<link rel="stylesheet" href="assets/css/styles.css">
+	<link rel="stylesheet" href="assets/css/custom.css">
+</head>
+
+<body class="h-entry">
+	<div class="head">
+		<p data-fill-with="logo"></p>
+		<h1 class="p-name no-ref" id="title">Competitive Programming Basic</h1>
+		<h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Unofficial Proposal Draft,
+				<time class="dt-updated" datetime="2018-01-22">22 January 2018</time></span></h2>
+		<div data-fill-with="spec-metadata">
+			<dl>
+				<dt>Author:</dt>
+				<dd><a href="https://wa.me/6282362361344">Frederic Davidsen</a></dd>
+				<dt>Warning:</dt>
+				<dd>WORK IN PROGRESS</dd>
+			</dl>
+		</div>
+		<div data-fill-with="warning"></div>
+		<p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/"
+				rel="license"><img alt="CC0" src="https://licensebuttons.net/p/zero/1.0/80x15.png"></a> To the extent
+			possible under law, the editors have waived all copyright
+			and related or neighboring rights to this work.
+			In addition, as of 22 January 2018,
+			the editors have made this specification available under the <a
+				href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0" rel="license">Open Web
+				Foundation Agreement Version 1.0</a>,
+			which is available at http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
+			Parts of this work may be from another specification document. If so, those parts are instead covered by the
+			license of that specification document. </p>
+		<hr title="Separator for header">
+	</div>
+	<div class="p-summary" data-fill-with="abstract">
+		<h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
+		<p>WebBook is a new format for electronic books, based on Web Standards only, and meant to make such books
+			readable inside a browser.</p>
+	</div>
+	<div data-fill-with="at-risk"></div>
+	<nav data-fill-with="table-of-contents" id="toc">
+		<h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
+		<ol class="toc" role="directory">
+			<li>
+				<a href="#intro"><span class="secno">1</span> <span class="content">Introduction</span></a>
+				<ol class="toc">
+					<li><a href="#reqs"><span class="secno">1.1</span> <span class="content">Requirements</span></a>
+				</ol>
+			<li>
+				<a href="#instances"><span class="secno">2</span> <span class="content">WebBook instances</span></a>
+				<ol class="toc">
+					<li><a href="#navigation-document"><span class="secno">2.1</span> <span class="content">The
+								navigation document</span></a>
+					<li><a href="#content-document-title"><span class="secno">2.2</span> <span class="content">The
+								title</span></a>
+					<li><a href="#navigation-document-language"><span class="secno">2.3</span> <span class="content">The
+								main language</span></a>
+					<li><a href="#navigation-document-direction"><span class="secno">2.4</span> <span
+								class="content">The progression direction</span></a>
+					<li><a href="#navigation-document-identifier"><span class="secno">2.5</span> <span
+								class="content">The identifier</span></a>
+					<li><a href="#navigation-document-other-metadata"><span class="secno">2.6</span> <span
+								class="content">Other metadata</span></a>
+					<li><a href="#navigation-document-navdata"><span class="secno">2.7</span> <span
+								class="content">Navigation data</span></a>
+				</ol>
+			<li><a href="#epub-compat"><span class="secno">3</span> <span class="content">Compatibility with EPUB
+						3.0.1</span></a>
+			<li><a href="#known-implem"><span class="secno">4</span> <span class="content">Known
+						implementations</span></a>
+			<li><a href="#acks"><span class="secno">5</span> <span class="content">Acknowledgements</span></a>
+			<li><a href="#conformance"><span class="secno"></span> <span class="content"> Conformance</span></a>
+			<li>
+				<a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
+				<ol class="toc">
+					<li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by
+								this specification</span></a>
+					<li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms
+								defined by reference</span></a>
+				</ol>
+			<li>
+				<a href="#references"><span class="secno"></span> <span class="content">References</span></a>
+				<ol class="toc">
+					<li><a href="#normative"><span class="secno"></span> <span class="content">Normative
+								References</span></a>
+					<li><a href="#informative"><span class="secno"></span> <span class="content">Informative
+								References</span></a>
+				</ol>
+		</ol>
+	</nav>
+
+	<main>
+		<h2 class="heading settled" data-level="1" id="intro"><span class="secno">1. </span><span
+				class="content">Struktur Data: Array</span><a class="self-link" href="#intro"></a></h2>
+		<p>Struktur data adalah cara untuk mengelola <b>kumpulan data</b> sehingga data tersebut dapat diakses dan
+			dimodifikasi secara efisien. Struktur data yang ada di C++ meliputi Array, Vector, Stack, Queue, Deque, Set,
+			Map, Priority Queue, dll.</p>
+		<ul>
+			<li>
+				Array adalah struktur data yang digunakan untuk menyimpan sekumpulan data yang memiliki tipe yang sama
+			</li>
+			<li>
+				Array memungkinkan penyimpanan data terurut dan akses secara random menggunakan index
+			</li>
+			<li>
+				Setiap elemen dalam array memerlukan memori dan bergantung pada tipe data setiap elemennya
+			</li>
+			<li>
+				Total memori yang dibutuhkan sebuah array sama dengan banyaknya elemen dikali ukuran memori untuk
+				satu elemen
+			</li>
+			<li>
+				Sebagai contoh, sebuah array dengan 100 elemen bertipe int akan memerlukan memori sebesar 100 × 4
+				byte = 400 byte
+			</li>
+		</ul>
+		<div class="example">
+			<code>
+int N = 5;
+int arr[N] = {10, 20, 30, 40, 50}; // Inisialisasi array dengan 5 elemen
+
+arr[2] = -1; // Mengubah nilai elemen ketiga menjadi -1
+
+for (int i = 0; i < N; i++) {
+	cout << "Elemen ke-" << i << ": " << arr[i] << endl;
+}
+
+// Output:
+// Elemen ke-0: 10
+// Elemen ke-1: 20
+// Elemen ke-2: -1
+// Elemen ke-3: 40
+// Elemen ke-4: 50
+</code>
+		</div>
+		<div class="example">
+			<code>
+int N = 5;
+int arr[N];
+
+// Cara 1:
+cin >> arr[0];
+cin >> arr[1];
+cin >> arr[2];
+cin >> arr[3];
+cin >> arr[4];
+
+// Cara 2:
+for (int i = 0; i < N; i++) {
+	cin >> arr[i]; // Input nilai untuk setiap index
+}
+</code>
+		</div>
+
+
+		<h3 class="heading settled" data-level="1.1" id="reqs"><span class="secno">1.1. </span><span
+				class="content">Soal Latihan</span><a class="self-link" href="#reqs"></a></h3>
+		<div class="note problem">
+			<p>Problem A</p>
+			<p>Buatlah sebuah program untuk membalikkan urutan elemen dalam sebuah array.</p>
+			<div class="input">
+				5
+				1 2 3 4 5
+			</div>
+			<div class="output">
+				5 4 3 2 1
+			</div>
+		</div>
+		<div class="note problem">
+			<p>Problem B</p>
+			<p>Buatlah sebuah program untuk menghitung jumlah semua elemen dalam sebuah array.</p>
+			<div class="input">
+				5
+				1 2 3 4 5
+			</div>
+			<div class="output">
+				15
+			</div>
+		</div>
+		<div class="note problem">
+			<p>Problem C</p>
+			<p>Buatlah sebuah program untuk menjumlahkan nilai dari dua array menjadi satu array baru.</p>
+			<div class="input">
+				5
+				0 1 2 3 4
+				5 4 3 2 1
+			</div>
+			<div class="output">
+				5 5 5 5 5
+			</div>
+		</div>
+
+
+		<h2 class="heading settled" data-level="2" id="instances"><span class="secno">2. </span><span
+				class="content">Struktur Data: Array 2 Dimensi</span><a class="self-link" href="#instances"></a></h2>
+		<p>A WebBook instance is a <a data-link-type="biblio" href="#biblio-zip">[ZIP]</a> container. All files in a
+			WebBook
+			instance MUST be stored as is (no compression) or using the Deflate
+			algorithm. All file and directory names must be encoded in UTF-8 <a data-link-type="biblio"
+				href="#biblio-unicode">[UNICODE]</a>. All File Names within the same directory must be unique
+			following case normalization as described in section 3.13 of <a data-link-type="biblio"
+				href="#biblio-unicode">[UNICODE]</a>. All File Names within the same directory should be
+			unique following NFC or NFD normalization <a data-link-type="biblio" href="#biblio-uax15">[UAX15]</a>.
+		</p>
+		<p>The file name of a WebBook instance SHOULD use the <code>wbook</code> file extension, unless <a
+				href="#epub-compat">compatibility</a> with <a data-link-type="biblio"
+				href="#biblio-epub301">[EPUB301]</a> is added; in that case, the <code>epub</code> file
+			extension is recommended. User Agents should always treat a zipped
+			package with file extension <code>wbook</code> or <code>epub</code> or
+			using the <a href="http://www.idpf.org/epub/301/spec/epub-ocf.html#app-media-type">EPUB
+				Media Type</a> <a data-link-type="biblio" href="#biblio-epub-ocf301">[EPUB-OCF301]</a> as a
+			potential
+			WebBook.</p>
+		<p>A WebBook instance MUST contain a <a href="#navigation-document">navigation document</a>.</p>
+		<p>A WebBook instance and each directory inside that WebBook instance can contain
+			any number of files and directories. All files inside a WebBook instance
+			SHOULD have a file extension to ensure all User Agents (including Web
+			browsers) can render the file if necessary even if no HTTP header is
+			present or if the User Agent cannot determine the type of the file
+			from its contents.</p>
+		<p>Inside a WebBook Level 1 instance, all internal references (links,
+			references to replaced elements, etc.) SHOULD be strictly relative. With
+			respect to section 4.2 of <a data-link-type="biblio" href="#biblio-rfc3986">[RFC3986]</a>, only
+			<code>path-noscheme</code> and <code>path-empty</code> are allowed for
+			IRIs' <code>relative-part</code>. References to resources external to
+			the WebBook instance are not restricted.
+		</p>
+		<div class="example" id="example-1ea0223a">
+			<a class="self-link" href="#example-1ea0223a"></a>
+			<p>An example of Moby Dick packaged as a WebBook can be found <a
+					href="http://glazman.org/e0/samples/">there.</a></p>
+		</div>
+		<h3 class="heading settled" data-level="2.1" id="navigation-document"><span class="secno">2.1. </span><span
+				class="content">The navigation document</span><a class="self-link" href="#navigation-document"></a>
+		</h3>
+		<p>The <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="nav-doc">navigation document</dfn>
+			MUST
+			be a <a data-link-type="biblio" href="#biblio-html">[html]</a> document named <code>index.html</code> if
+			its
+			serialization is HTML and <code>index.xhtml</code> if its serialization is XML. The navigation
+			document MUST be placed inside the topmost directory inside the
+			containing WebBook instance.</p>
+		<p>If both <code>index.html</code> and <code>index.xhtml</code> are present in the WebBook instance,
+			the User Agent must use <code>index.html</code> as the navigation document.</p>
+		<p>The navigation document is a regular html document, intended to be
+			rendered by a Web browser, that contains the following information:</p>
+		<ul>
+			<li data-md="">
+				<p>metadata:</p>
+				<ul>
+					<li data-md="">
+						<p>a <a href="#content-document-title">title</a> (optional)</p>
+					<li data-md="">
+						<p>a <a href="#navigation-document-language">main language</a> (optional)</p>
+					<li data-md="">
+						<p>a <a href="#navigation-document-direction">progression direction</a> (optional)</p>
+					<li data-md="">
+						<p>a <a href="#navigation-document-identifier">unique identifier</a> (optional)</p>
+					<li data-md="">
+						<p><a href="#navigation-document-other-metadata">other metadata</a> (optional)</p>
+				</ul>
+			<li data-md="">
+				<p><a href="#navigation-document-navdata">navigation data</a> (optional)</p>
+			<li data-md="">
+				<p>other html elements (optional)</p>
+		</ul>
+		<h3 class="heading settled" data-level="2.2" id="content-document-title"><span class="secno">2.2.
+			</span><span class="content">The title</span><a class="self-link" href="#content-document-title"></a>
+		</h3>
+		<p>The title of a WebBook instance represents the title of the electronic
+			book and is the title a User Agent SHOULD present to users. The title
+			of a WebBook instance is contained in the html <a data-link-type="dfn"
+				href="https://html.spec.whatwg.org/multipage/dom.html#the-title-element-2"
+				id="ref-for-the-title-element-2">the title element</a> element of the WebBook instance’s <a
+				href="#navigation-document">navigation
+				document</a>.</p>
+		<div class="example" id="example-ebee0104">
+			<a class="self-link" href="#example-ebee0104"></a>
+			<pre>&lt;html lang="en">
+  &lt;head>
+    &lt;title>Moby-Dick&lt;/title>
+  &lt;/head>
+  ....
+&lt;/html>
+</pre>
+		</div>
+		If the navigation document has no <code>title</code> element, the
+		title of the WebBook instance is the empty string.
+		<p>User agents should use the navigation document’s title when referring
+			to the containing WebBook in their user interface. When the contents
+			of a <code>title</code> element are used in this way, the <a
+				href="https://html.spec.whatwg.org/multipage/dom.html#the-directionality">directionality</a> of that
+			<code>title</code> element should be used to set the
+			directionality of the WebBook’s title in the user interface.
+		</p>
+		<h3 class="heading settled" data-level="2.3" id="navigation-document-language"><span class="secno">2.3.
+			</span><span class="content">The main language</span><a class="self-link"
+				href="#navigation-document-language"></a></h3>
+		<p>If the <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-html-element">root
+				element</a> of the <a href="#navigation-document">navigation document</a> of a
+			given WebBook specifies a <a href="https://html.spec.whatwg.org/multipage/dom.html#attr-lang">primary
+				language</a> for the navigation document, that language is also the
+			primary language of that WebBook.</p>
+		<h3 class="heading settled" data-level="2.4" id="navigation-document-direction"><span class="secno">2.4.
+			</span><span class="content">The progression direction</span><a class="self-link"
+				href="#navigation-document-direction"></a></h3>
+		<p>The <dfn class="dfn-paneled" data-dfn-for="WebBook" data-dfn-type="dfn" data-noexport=""
+				id="webbook-principal-writing-mode">principal writing mode</dfn> of a WebBook is the same as
+			the <a data-link-type="dfn" href="#webbook-principal-writing-mode"
+				id="ref-for-webbook-principal-writing-mode">principal writing mode</a> of its navigation document,
+			as specified in <a href="https://www.w3.org/TR/css-writing-modes-3/#principal-flow">CSS Writing Modes
+				Level
+				3 §principal-flow</a>,
+			and the <dfn class="dfn-paneled" data-dfn-for="WebBook" data-dfn-type="dfn" data-noexport=""
+				id="webbook-page-progression">page progression</dfn> direction of a WebBook is the same as
+			the <a data-link-type="dfn" href="#webbook-page-progression" id="ref-for-webbook-page-progression">page
+				progression</a> direction of its navigation document,
+			as specified in <a href="https://www.w3.org/TR/css-writing-modes-3/#page-direction">CSS Writing Modes
+				Level
+				3 §page-direction</a> and <a href="https://www.w3.org/TR/css3-page/#progression">CSS Paged Media
+				Module
+				Level 3 §progression</a>.</p>
+		<p class="note" role="note"><span>Note:</span> The above implies that authors and authoring tools
+			need to set the <a
+				href="https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute"><code>dir</code></a>
+			attribute
+			to <code>"rtl"</code> on the
+			<code><a data-link-type="element" href="https://html.spec.whatwg.org/multipage/semantics.html#the-html-element" id="ref-for-the-html-element">html</a></code>
+			or
+			<code><a data-link-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-body-element" id="ref-for-the-body-element">body</a></code>
+			element of the navigation document
+			for WebBooks written in right-to-left languages and scripts to work properly.
+		</p>
+		<h3 class="heading settled" data-level="2.5" id="navigation-document-identifier"><span class="secno">2.5.
+			</span><span class="content">The identifier</span><a class="self-link"
+				href="#navigation-document-identifier"></a></h3>
+		<p>A WebBook MAY contain a unique identifier (no other WebBook may have
+			the same identifier; multiple instances of the same WebBook can have
+			the same identifier), such as a UUID, DOI or ISBN.</p>
+		<p>That identifier should be contained in a html element itself contained
+			in the <a href="#navigation-document">navigation document</a> and
+			expressed using <a data-link-type="biblio" href="#biblio-rdfa-primer">[RDFA-PRIMER]</a>, for example
+			through
+			the <code>property</code> and <code>vocab</code> attributes.</p>
+		<div class="example" id="example-1997b79e">
+			<a class="self-link" href="#example-1997b79e"></a>
+			<pre>&lt;span property="http://purl.org/dc/elements/1.1/identifier">
+  urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809
+&lt;/span></pre>
+		</div>
+		<div class="example" id="example-7f414105">
+			<a class="self-link" href="#example-7f414105"></a>
+			<pre>&lt;span vocab="http://purl.org/dc/elements/1.1/" property="identifier">
+  urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809
+&lt;/span></pre>
+		</div>
+		<p>It’s also possible to use the <a
+				href="https://www.w3.org/TR/rdfa-primer/#using-the-content-attribute"><code>content</code></a>
+			attribute
+			on a html <a
+				href="https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element"><code>meta</code></a>
+			element but that approach makes the property not easily editable in a
+			Wysiwyg editor and is therefore strongly discouraged in the context of
+			a WebBook.</p>
+		<h3 class="heading settled" data-level="2.6" id="navigation-document-other-metadata"><span class="secno">2.6.
+			</span><span class="content">Other metadata</span><a class="self-link"
+				href="#navigation-document-other-metadata"></a></h3>
+		<p>The <a href="#navigation-document">navigation document</a> can contain any
+			number of extra metadata, expressed through <a data-link-type="biblio"
+				href="#biblio-rdfa-primer">[RDFA-PRIMER]</a>, for
+			example through the <code>property</code> and <code>vocab</code> attributes.</p>
+		<p>It’s also possible to use the <a
+				href="https://www.w3.org/TR/rdfa-primer/#using-the-content-attribute"><code>content</code></a>
+			attribute
+			on a html <a
+				href="https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element"><code>meta</code></a>
+			element but that approach makes the property not easily editable in a
+			Wysiwyg editor and is therefore strongly discouraged in the context of
+			a WebBook.</p>
+		<div class="example" id="example-c9af94a6">
+			<a class="self-link" href="#example-c9af94a6"></a>
+			<pre>&lt;html lang="en">
+  &lt;head>
+    &lt;title>Moby-Dick&lt;/title>
+  &lt;/head>
+  &lt;body>
+    ...
+      &lt;span property="http://purl.org/dc/elements/1.1/identifier">
+        urn:isbn:9780316000000
+      &lt;/span>
+      ...
+      &lt;span property="http://purl.org/dc/terms/modified">
+        2012-01-13T01:13:00Z
+      &lt;/span>
+      ...
+      &lt;span property="http://purl.org/dc/terms/creator">
+        Herman Melville
+      &lt;/span>
+      ....
+      &lt;span property="http://purl.org/dc/terms/contributor">
+        Dave Cramer
+      &lt;/span>
+    ...
+  &lt;/body>
+&lt;/html>
+</pre>
+		</div>
+		<h3 class="heading settled" data-level="2.7" id="navigation-document-navdata"><span class="secno">2.7.
+			</span><span class="content">Navigation data</span><a class="self-link"
+				href="#navigation-document-navdata"></a></h3>
+		<p>A WebBook instance MAY contain no more than one collection of navigation data serving two purposes:</p>
+		<ol>
+			<li data-md="">
+				<p>it specifies the Reading Order of the resources composing the WebBook</p>
+			<li data-md="">
+				<p>it specifies the Table of Contents of the WebBook</p>
+		</ol>
+		<p>If present, <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="navigation-data">navigation
+				data</dfn> are a <a
+				href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-nav-element"><code>nav</code></a>
+			html element carrying the <a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-toc"><code>doc-toc</code></a>
+			role <a data-link-type="biblio" href="#biblio-dpub-aria-10">[DPUB-ARIA-1.0]</a> role and contained in
+			the
+			<code>body</code> element of the <a href="#navigation-document">navigation document</a>.
+		</p>
+		<p>The collection of all hyperlinks (<code>a</code> elements) inside
+			navigation data, in document tree traversal order, specifies the <dfn class="dfn-paneled"
+				data-dfn-type="dfn" data-noexport="" id="reading-order">Reading Order</dfn> of all the resources
+			composing the WebBook.</p>
+		<p>The collection of all hyperlinks (<code>a</code> elements) inside
+			navigation data having no <a href="https://dom.spec.whatwg.org/#concept-tree-inclusive-ancestor">inclusive
+				ancestor</a> <a data-link-type="biblio" href="#biblio-dom">[DOM]</a> holding a html <a
+				href="https://html.spec.whatwg.org/multipage/interaction.html#the-hidden-attribute">hidden</a>
+			attribute, in document tree traversal order, specifies the <dfn class="dfn-paneled" data-dfn-type="dfn"
+				data-lt="Table of Contents" data-noexport="" id="table-of-contents">Table of
+				Contents</dfn> of the WebBook.</p>
+		<p>If the <a data-link-type="dfn" href="#nav-doc" id="ref-for-nav-doc">navigation document</a> does not have
+			<a data-link-type="dfn" href="#navigation-data" id="ref-for-navigation-data">navigation data</a> or if
+			it
+			does have <a data-link-type="dfn" href="#navigation-data" id="ref-for-navigation-data①">navigation
+				data</a>
+			that contains no hyperlink
+			(and therefore would define an empty <a data-link-type="dfn" href="#reading-order"
+				id="ref-for-reading-order">Reading order</a> and <a data-link-type="dfn" href="#table-of-contents"
+				id="ref-for-table-of-contents">Table of Contents</a>)
+			then the <a data-link-type="dfn" href="#reading-order" id="ref-for-reading-order①">Reading Order</a> and
+			<a data-link-type="dfn" href="#table-of-contents" id="ref-for-table-of-contents①">Table of Contents</a>
+			are
+			defined to contain the <a data-link-type="dfn" href="#nav-doc" id="ref-for-nav-doc①">navigation
+				document</a>.
+		</p>
+		<div class="note" role="note">
+			Except in documents with no <a data-link-type="dfn" href="#navigation-data"
+				id="ref-for-navigation-data②">navigation data</a> or an empty one,
+			the <a data-link-type="dfn" href="#nav-doc" id="ref-for-nav-doc②">navigation document</a> is not
+			included in
+			the reading order by default,
+			and WebBook-capable User Agents would skip it when displaying the book
+			from the start.
+			<p>It is is possible to include the <a data-link-type="dfn" href="#nav-doc" id="ref-for-nav-doc③">navigation
+					document</a> into the <a data-link-type="dfn" href="#reading-order"
+					id="ref-for-reading-order②">Reading Order</a> by having a link (possibly hidden) to it from the
+				<a data-link-type="dfn" href="#navigation-data" id="ref-for-navigation-data③">navigation data</a>.
+			</p>
+			<div class="example" id="example-ff8aacf7">
+				<a class="self-link" href="#example-ff8aacf7"></a> This contrived but fully functional and valid
+				example
+				shows a minimalist WebBook
+				whose navigation document also serves as the
+				first document in the reading order.
+				<p><code>index.html</code>:</p>
+				<pre><code class="highlight"><span class="cp">&lt;!doctype html></span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">en</span><span class="p">></span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">utf-8</span><span class="p">></span> <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">viewport</span> <span class="na">content</span><span class="o">=</span><span class="s">"width=device-width"</span><span class="p">></span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">></span>A Good Joke<span class="p">&lt;/</span><span class="nt">title</span><span class="p">></span>
+<span class="p">&lt;</span><span class="nt">nav</span> <span class="na">role</span><span class="o">=</span><span class="s">doc-toc</span><span class="p">></span>
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">>&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">#</span><span class="p">></span>A Good  Joke<span class="p">&lt;/</span><span class="nt">a</span><span class="p">>&lt;/</span><span class="nt">h1</span><span class="p">></span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">></span>Why did the chicken cross the road?
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">>&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"punchline.html"</span><span class="p">></span>Punchline<span class="p">&lt;/</span><span class="nt">a</span><span class="p">></span>
+<span class="p">&lt;/</span><span class="nt">nav</span><span class="p">></span>
+</code></pre>
+				<p><code>punchline.html</code>:</p>
+				<pre><code class="highlight"><span class="cp">&lt;!doctype html></span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">en</span><span class="p">></span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">utf-8</span><span class="p">></span> <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">viewport</span> <span class="na">content</span><span class="o">=</span><span class="s">"width=device-width"</span><span class="p">></span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">></span>A Good Joke’s Punchline<span class="p">&lt;/</span><span class="nt">title</span><span class="p">></span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">></span>To get to the other side.
+</code></pre>
+			</div>
+		</div>
+		<p>User Agents can use the Reading Order to render all its resources, for
+			example, in one single paginated flow. User Agents can use the Table
+			of Contents for example to provide the user with an ordered collection
+			of resources he/she can directly navigate to on demand.</p>
+		<div class="example" id="example-58f09892">
+			<a class="self-link" href="#example-58f09892"></a>
+			<pre>&lt;html lang="en">
+  &lt;head>
+    &lt;title>Moby-Dick&lt;/title>
+  &lt;/head>
+  &lt;body>
+    &lt;nav role="doc-toc">
+      &lt;ul>
+        &lt;li>&lt;a href="html/cover.html" hidden>Cover&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="html/titlepage.html">Moby-Dick&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="html/epigraph.html" hidden>EXTRACTS (Supplied by a Sub-Sub-Librarian)&lt;/a>.&lt;/li>
+        &lt;li>&lt;a href="html/chapter_001.html>Chapter 1. Loomings.&lt;/a>&lt;/li>
+        ...
+      &lt;/ul>
+    &lt;/nav>
+  &lt;/body>
+&lt;/html>
+</pre>
+		</div>
+		<h2 class="heading settled" data-level="3" id="epub-compat"><span class="secno">3. </span><span
+				class="content">Compatibility with EPUB 3.0.1</span><a class="self-link" href="#epub-compat"></a>
+		</h2>
+		<p><em>This section is informative.</em></p>
+		<p>It is easily possible to turn a valid <a data-link-type="biblio" href="#biblio-epub301">[EPUB301]</a>
+			package
+			into a WebBook, retaining full compatibility with <a data-link-type="biblio"
+				href="#biblio-epub301">[EPUB301]</a>, using
+			the following instructions:</p>
+		<ol>
+			<li data-md="">
+				<p>modify the EPUB package so its <a
+						href="http://www.idpf.org/epub/301/spec/epub-contentdocs.html#sec-xhtml-nav">Navigation
+						Document</a> <a data-link-type="biblio"
+						href="#biblio-epub-contentdocs301">[EPUB-CONTENTDOCS301]</a> is now:</p>
+				<ol>
+					<li data-md="">
+						<p>named <code>index.xhtml</code></p>
+					<li data-md="">
+						<p>placed inside the topmost directory of the package</p>
+				</ol>
+			<li data-md="">
+				<p>update all links and references to extra resources inside the Navigation Document to reflect the
+					new
+					name and location of the file inside the package (if needed)</p>
+			<li data-md="">
+				<p>add the <code>role</code> attribute with value <code>doc-toc</code> to the <a
+						href="http://www.idpf.org/epub/301/spec/epub-contentdocs.html#sec-xhtml-nav-def-types-toc"><code>toc nav</code></a>
+					element of the Navigation Document</p>
+			<li data-md="">
+				<p>update the <a href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-item-elem">reference
+						to the Navigation Document in the manifest of the Package Document</a> <a
+						data-link-type="biblio" href="#biblio-epub-publications301">[EPUB-PUBLICATIONS301]</a> of
+					the
+					package to reflect the new name and location of the file inside the package (if needed)</p>
+			<li data-md="">
+				<p>update references to the Navigation Document inside other <a
+						href="http://www.idpf.org/epub/301/spec/epub-contentdocs.html#sec-contentdocs">Content
+						Documents</a> <a data-link-type="biblio"
+						href="#biblio-epub-contentdocs301">[EPUB-CONTENTDOCS301]</a> of the package to reflect the
+					new
+					name and location of the file inside the package (if needed)</p>
+		</ol>
+		<div class="example" id="example-e9408472">
+			<a class="self-link" href="#example-e9408472"></a>
+			<p>An example of Moby Dick packaged in conformance to both
+				this specification and EPUB 3.0.1 can be found <a href="http://glazman.org/e0/samples/">there</a>.
+			</p>
+		</div>
+		<h2 class="heading settled" data-level="4" id="known-implem"><span class="secno">4. </span><span
+				class="content">Known implementations</span><a class="self-link" href="#known-implem"></a></h2>
+		<p><em>This section is informative.</em></p>
+		<ul>
+			<li data-md="">
+				<p><a href="https://github.com/therealglazou/epub3towebbook/">epub3towebbook</a>, a Node.js script
+					to
+					convert a EPUB3 package into a EPUB3-compatible WebBook</p>
+			<li data-md="">
+				<p>the next public version of <a href="http://bluegriffon.org">BlueGriffon</a> will create
+					EPUB3-compatible WebBooks</p>
+		</ul>
+		<h2 class="heading settled" data-level="5" id="acks"><span class="secno">5. </span><span
+				class="content">Acknowledgements</span><a class="self-link" href="#acks"></a></h2>
+		<p>The author would like to thank the following individuals for their
+			invaluable contributions to this document throughout the numerous
+			discussions he had with them: Dave Cramer, Florian Rivoal.</p>
+	</main>
+	<div data-fill-with="conformance">
+		<h2 class="no-ref no-num heading settled" id="conformance"><span class="content"> Conformance</span><a
+				class="self-link" href="#conformance"></a></h2>
+		<p> Conformance requirements are expressed with a combination of descriptive assertions and RFC 2119
+			terminology.
+			The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”,
+			“MAY”, and “OPTIONAL”
+			in the normative parts of this document
+			are to be interpreted as described in RFC 2119.
+			However, for readability,
+			these words do not appear in all uppercase letters in this specification. </p>
+		<p> All of the text of this specification is normative
+			except sections explicitly marked as non-normative, examples, and notes. <a data-link-type="biblio"
+				href="#biblio-rfc2119">[RFC2119]</a> </p>
+		<p> Examples in this specification are introduced with the words “for example”
+			or are set apart from the normative text with <code>class="example"</code>, like this: </p>
+		<div class="example" id="example-example"><a class="self-link" href="#example-example"></a> This is an example
+			of an informative example. </div>
+		<p> Informative notes begin with the word “Note”
+			and are set apart from the normative text with <code>class="note"</code>, like this: </p>
+		<p class="note" role="note"> Note, this is an informative note. </p>
+	</div>
+
+	<h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link"
+			href="#index"></a></h2>
+	<h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this
+			specification</span><a class="self-link" href="#index-defined-here"></a></h3>
+	<ul class="index">
+		<li><a href="#navigation-data">navigation data</a><span>, in §2.7</span>
+		<li><a href="#nav-doc">navigation document</a><span>, in §2.1</span>
+		<li><a href="#webbook-page-progression">page progression</a><span>, in §2.4</span>
+		<li><a href="#webbook-principal-writing-mode">principal writing mode</a><span>, in §2.4</span>
+		<li><a href="#reading-order">Reading Order</a><span>, in §2.7</span>
+		<li><a href="#table-of-contents">Table of Contents</a><span>, in §2.7</span>
+	</ul>
+	<h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by
+			reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
+	<ul class="index">
+		<li>
+			<a data-link-type="biblio">[html]</a> defines the following terms:
+			<ul>
+				<li><a href="https://html.spec.whatwg.org/multipage/sections.html#the-body-element">body</a>
+				<li><a href="https://html.spec.whatwg.org/multipage/semantics.html#the-html-element">html</a>
+				<li><a href="https://html.spec.whatwg.org/multipage/dom.html#the-title-element-2">the title element</a>
+			</ul>
+	</ul>
+	<h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a
+			class="self-link" href="#references"></a></h2>
+	<h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a
+			class="self-link" href="#normative"></a></h3>
+	<dl>
+		<dt id="biblio-dom">[DOM]
+		<dd>Anne van Kesteren. <a href="https://dom.spec.whatwg.org/">DOM Standard</a>. Living Standard. URL: <a
+				href="https://dom.spec.whatwg.org/">https://dom.spec.whatwg.org/</a>
+		<dt id="biblio-dpub-aria-10">[DPUB-ARIA-1.0]
+		<dd>Matt Garish; et al. <a href="https://www.w3.org/TR/dpub-aria-1.0/">Digital Publishing WAI-ARIA Module
+				1.0</a>. REC. URL: <a
+				href="https://www.w3.org/TR/dpub-aria-1.0/">https://www.w3.org/TR/dpub-aria-1.0/</a>
+		<dt id="biblio-epub-contentdocs301">[EPUB-CONTENTDOCS301]
+		<dd><a href="http://www.idpf.org/epub/301/spec/epub-contentdocs.html">EPUB Content Documents 3.0.1</a>.
+			Recommended Specification. URL: <a
+				href="http://www.idpf.org/epub/301/spec/epub-contentdocs.html">http://www.idpf.org/epub/301/spec/epub-contentdocs.html</a>
+		<dt id="biblio-epub-ocf301">[EPUB-OCF301]
+		<dd><a href="http://www.idpf.org/epub/301/spec/epub-ocf.html">EPUB Open Container Format (OCF) 3.0.1</a>.
+			Recommended Specification. URL: <a
+				href="http://www.idpf.org/epub/301/spec/epub-ocf.html">http://www.idpf.org/epub/301/spec/epub-ocf.html</a>
+		<dt id="biblio-epub-publications301">[EPUB-PUBLICATIONS301]
+		<dd><a href="http://www.idpf.org/epub/301/spec/epub-publications.html">EPUB Publications 3.0.1</a>. Recommended
+			Specification. URL: <a
+				href="http://www.idpf.org/epub/301/spec/epub-publications.html">http://www.idpf.org/epub/301/spec/epub-publications.html</a>
+		<dt id="biblio-epub301">[EPUB301]
+		<dd><a href="http://www.idpf.org/epub/301/spec/epub-overview.html">EPUB 3.0.1</a>. Recommended Specification.
+			URL: <a
+				href="http://www.idpf.org/epub/301/spec/epub-overview.html">http://www.idpf.org/epub/301/spec/epub-overview.html</a>
+		<dt id="biblio-html">[HTML]
+		<dd>Anne van Kesteren; et al. <a href="https://html.spec.whatwg.org/multipage/">HTML Standard</a>. Living
+			Standard. URL: <a href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a>
+		<dt id="biblio-rfc2119">[RFC2119]
+		<dd>S. Bradner. <a href="https://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement
+				Levels</a>. March 1997. Best Current Practice. URL: <a
+				href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a>
+		<dt id="biblio-rfc3986">[RFC3986]
+		<dd>T. Berners-Lee; R. Fielding; L. Masinter. <a href="https://tools.ietf.org/html/rfc3986">Uniform Resource
+				Identifier (URI): Generic Syntax</a>. January 2005. Internet Standard. URL: <a
+				href="https://tools.ietf.org/html/rfc3986">https://tools.ietf.org/html/rfc3986</a>
+		<dt id="biblio-uax15">[UAX15]
+		<dd>Mark Davis; Ken Whistler. <a href="https://www.unicode.org/reports/tr15/tr15-45.html">Unicode Normalization
+				Forms</a>. 26 May 2017. Unicode Standard Annex #15. URL: <a
+				href="https://www.unicode.org/reports/tr15/tr15-45.html">https://www.unicode.org/reports/tr15/tr15-45.html</a>
+		<dt id="biblio-unicode">[UNICODE]
+		<dd><a href="https://www.unicode.org/versions/latest/">The Unicode Standard</a>. URL: <a
+				href="https://www.unicode.org/versions/latest/">https://www.unicode.org/versions/latest/</a>
+	</dl>
+	<h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a
+			class="self-link" href="#informative"></a></h3>
+	<dl>
+		<dt id="biblio-rdfa-primer">[RDFA-PRIMER]
+		<dd>Ivan Herman; et al. <a href="https://www.w3.org/TR/rdfa-primer/">RDFa 1.1 Primer - Third Edition</a>. 17
+			March 2015. NOTE. URL: <a href="https://www.w3.org/TR/rdfa-primer/">https://www.w3.org/TR/rdfa-primer/</a>
+		<dt id="biblio-zip">[ZIP]
+		<dd><a href="https://pkware.cachefly.net/webdocs/APPNOTE/APPNOTE-6.3.3.TXT">.ZIP File Format Specification
+				6.3.3</a>. URL: <a
+				href="https://pkware.cachefly.net/webdocs/APPNOTE/APPNOTE-6.3.3.TXT">https://pkware.cachefly.net/webdocs/APPNOTE/APPNOTE-6.3.3.TXT</a>
+	</dl>
+	<aside class="dfn-panel" data-for="nav-doc">
+		<b><a href="#nav-doc">#nav-doc</a></b><b>Referenced in:</b>
+		<ul>
+			<li><a href="#ref-for-nav-doc">2.7. Navigation data</a> <a href="#ref-for-nav-doc①">(2)</a> <a
+					href="#ref-for-nav-doc②">(3)</a> <a href="#ref-for-nav-doc③">(4)</a>
+		</ul>
+	</aside>
+	<aside class="dfn-panel" data-for="webbook-principal-writing-mode">
+		<b><a href="#webbook-principal-writing-mode">#webbook-principal-writing-mode</a></b><b>Referenced in:</b>
+		<ul>
+			<li><a href="#ref-for-webbook-principal-writing-mode">2.4. The progression direction</a>
+		</ul>
+	</aside>
+	<aside class="dfn-panel" data-for="webbook-page-progression">
+		<b><a href="#webbook-page-progression">#webbook-page-progression</a></b><b>Referenced in:</b>
+		<ul>
+			<li><a href="#ref-for-webbook-page-progression">2.4. The progression direction</a>
+		</ul>
+	</aside>
+	<aside class="dfn-panel" data-for="navigation-data">
+		<b><a href="#navigation-data">#navigation-data</a></b><b>Referenced in:</b>
+		<ul>
+			<li><a href="#ref-for-navigation-data">2.7. Navigation data</a> <a href="#ref-for-navigation-data①">(2)</a>
+				<a href="#ref-for-navigation-data②">(3)</a> <a href="#ref-for-navigation-data③">(4)</a>
+		</ul>
+	</aside>
+	<aside class="dfn-panel" data-for="reading-order">
+		<b><a href="#reading-order">#reading-order</a></b><b>Referenced in:</b>
+		<ul>
+			<li><a href="#ref-for-reading-order">2.7. Navigation data</a> <a href="#ref-for-reading-order①">(2)</a> <a
+					href="#ref-for-reading-order②">(3)</a>
+		</ul>
+	</aside>
+	<aside class="dfn-panel" data-for="table-of-contents">
+		<b><a href="#table-of-contents">#table-of-contents</a></b><b>Referenced in:</b>
+		<ul>
+			<li><a href="#ref-for-table-of-contents">2.7. Navigation data</a> <a
+					href="#ref-for-table-of-contents①">(2)</a>
+		</ul>
+	</aside>
+
+	<script src="assets/js/scripts.js"></script>
+</body>
+
+</html>

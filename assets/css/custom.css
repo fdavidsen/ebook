@@ -1,0 +1,20 @@
+.example code {
+    white-space: pre-wrap;
+}
+
+.note.problem .input::before {
+    content: "Input:";
+}
+
+.note.problem .output {
+    margin-top: 1em;
+}
+
+.note.problem .output::before {
+    content: "Output:";
+}
+
+.note.problem .input,
+.note.problem .output {
+    white-space: pre-line;
+}
